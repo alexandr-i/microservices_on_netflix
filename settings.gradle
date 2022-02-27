@@ -1,0 +1,3 @@
+rootProject.name = 'udemy-msvc'
+
+include 'msvc-discovery'
