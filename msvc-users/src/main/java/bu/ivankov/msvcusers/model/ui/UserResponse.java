@@ -1,4 +1,4 @@
-package bu.ivankov.msvcusers.dto;
+package bu.ivankov.msvcusers.model.ui;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,10 +12,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto {
+public class UserResponse {
 
-    private Long id;
     private String firstName;
     private String lastName;
+    private String email;
+    private String userId;
 
 }

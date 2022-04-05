@@ -1,0 +1,13 @@
+server.port: ${PORT:0}
+spring:
+  application.name: msvc-users
+  devtools.restart.enabled: true
+
+eureka:
+  client.service-url.defaultZone: http://localhost:8100/eureka
+  instance.instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+gateway.host: localhost
+token:
+  expiration_time: 864000000
+  secret: dfdfdfdfd654d6f54s6d51f6s5d4f6s5d1f
