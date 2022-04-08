@@ -1,8 +1,10 @@
 ### API Default
 GET http://localhost:8010/msvc-users/users
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3ZWIxMGJhNi01OWVlLTQ4MjQtYTE5OC1iNjE0NWVhY2I3ZWIiLCJleHAiOjE2NTAwNjE4ODB9.La0INoCth5hLad1pbHYtm8I52zvdm7vSxScy_SXDINunz1NZ6roG3mjgOQQlH2E3Azdoek1ttbM6EnCEkDaIHQ
 
 ### Mapping
 GET http://localhost:8010/users
+
 
 ### Create
 POST http://localhost:8010/msvc-users/users
