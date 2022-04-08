@@ -1,0 +1,25 @@
+# To use from local files
+spring:
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configs
+
+server.port: 8099
+spring.application.name: msvc-config
+
+#
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: my git repo to get properties
+#          username: myname
+#          password: mypass
+
+
+#          clone-on-start: true

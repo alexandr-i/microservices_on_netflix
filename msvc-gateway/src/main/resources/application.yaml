@@ -1,0 +1,23 @@
+server.port: 8010
+spring:
+  application.name: api-gateway
+  config.import: optional:configserver:http://localhost:8099
+
+# Auto routing
+spring.cloud.gateway.discovery.locator:
+  enabled: true
+  lower-case-service-id:  true
+
+# Manual routing
+spring.cloud.gateway.routes[0].id: user-get
+spring.cloud.gateway.routes[0].uri: lb://msvc-users
+spring.cloud.gateway.routes[0].predicates[0]: Path=/msvc-users/users
+spring.cloud.gateway.routes[0].predicates[1]: Method=GET
+# Check if header exist
+spring.cloud.gateway.routes[0].predicates[2]: Header=Authorization, Bearer (.*)
+spring.cloud.gateway.routes[0].filters[0]: RemoveRequestHeader=Cookie
+# CustomFilter
+spring.cloud.gateway.routes[0].filters[1]: AuthorizationHeaderFilter
+#spring.cloud.gateway.routes[0].filters[1]: RewritePath=/msvc-users/users, /users
+#spring.cloud.gateway.routes[0].filters[1]: RewritePath=/msvc-users/(?<segment>.*), /$\{segment}
+#spring.cloud.gateway.routes[0].predicates[1]: Method=GET, PUT, POST

@@ -2,5 +2,6 @@ rootProject.name = 'udemy-msvc'
 
 include 'msvc-discovery'
 include 'msvc-gateway'
+include 'msvc-config'
 include 'msvc-users'
 include 'msvc-accounts'
