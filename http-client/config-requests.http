@@ -1,0 +1,9 @@
+### Check Configs msvc-users
+GET http://localhost:8099/msvc-users/default
+
+### Trigger bus update
+POST http://localhost:8099/actuator/busrefresh
+
+### Check msvc-user was updated
+GET http://localhost:8010/msvc-users/users/status
+

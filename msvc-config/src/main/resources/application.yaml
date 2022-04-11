@@ -7,10 +7,16 @@ spring:
       server:
         native:
           search-locations: classpath:/configs
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 server.port: 8099
 spring.application.name: msvc-config
 
+management.endpoints.web.exposure.include: busrefresh
 #
 #spring:
 #  cloud:

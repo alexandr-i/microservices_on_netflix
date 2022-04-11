@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    config:
+      name: msvc-users
+      uri: http://localhost:8099

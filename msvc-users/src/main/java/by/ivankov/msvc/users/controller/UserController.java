@@ -7,6 +7,7 @@ import by.ivankov.msvc.users.model.ui.UserResponse;
 import by.ivankov.msvc.users.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +26,12 @@ public class UserController {
 
     private final UserService userService;
     private final UserDtoMapper dtoMapper;
+    private final Environment env;
+
+    @GetMapping("/status")
+    public String getStatus() {
+        return "Current token expiration time is: " + env.getProperty("token.expiration_time");
+    }
 
     @GetMapping
     public List<UserDto> getAllUsers() {
