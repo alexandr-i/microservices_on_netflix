@@ -7,3 +7,12 @@ POST http://localhost:8099/actuator/busrefresh
 ### Check msvc-user was updated
 GET http://localhost:8010/msvc-users/users/status
 
+### Encrypt
+POST http://localhost:8099/encrypt
+
+hello_world
+
+### Decrypt
+POST http://localhost:8099/decrypt
+
+asdasdasdasdasd

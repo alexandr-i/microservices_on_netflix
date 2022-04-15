@@ -1,0 +1,12 @@
+### Helthcheck
+GET http://localhost:8010/actuator/health
+
+### Beans
+GET http://localhost:8010/actuator/beans
+
+### Routes
+GET http://localhost:8010/actuator/gateway/routes
+
+### GlobalFilters
+GET http://localhost:8010/actuator/gateway/globalfilters
+
