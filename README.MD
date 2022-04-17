@@ -17,3 +17,6 @@ KeyTool:
 keytool -genkeypair -alias apiEncryptionKey -keyalg RSA -dname "CN=Alexandr Ivankov,OU=Spring-MSVC,O=MyCompany,L=MyCity,S=MyState,C=MyCountry" -keypass 1q2w3e4r -keystore apiEncryptionKey.jks -storepass 1q2w3e4r
 keytool -importkeystore -srckeystore apiEncryptionKey.jks -deststoretype pkcs12
 
+Guide:
+1. run docker-compose
+2. run all msvc

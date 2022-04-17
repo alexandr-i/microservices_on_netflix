@@ -25,3 +25,7 @@ Content-Type: application/json
   "login": "JamesBond@email.com",
   "password": "agent007"
 }
+
+### GetById
+GET http://localhost:8010/msvc-users/users/9bdeed23-8ca6-4141-ae5e-6d4e58f40a58
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5YmRlZWQyMy04Y2E2LTQxNDEtYWU1ZS02ZDRlNThmNDBhNTgiLCJleHAiOjE2NTEwNzY1MzR9.qub2dd0RxxZTgYij3kG69TYrDHfIllYkp0pq16J3wNbcLGq0SaE255IsUW1o_tKtKO3srG3Qc97OfuxfnFTYjQ

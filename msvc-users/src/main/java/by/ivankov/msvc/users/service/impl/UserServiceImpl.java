@@ -1,9 +1,11 @@
 package by.ivankov.msvc.users.service.impl;
 
 import by.ivankov.msvc.users.mapper.UserEntityMapper;
+import by.ivankov.msvc.users.model.dto.AlbumDto;
 import by.ivankov.msvc.users.model.dto.UserDto;
 import by.ivankov.msvc.users.model.entity.UserEntity;
 import by.ivankov.msvc.users.repository.UserRepository;
+import by.ivankov.msvc.users.service.AlbumService;
 import by.ivankov.msvc.users.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.User;
@@ -13,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -22,6 +25,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
+    private final AlbumService albumService;
     private final UserRepository userRepository;
     private final UserEntityMapper mapper;
     private final BCryptPasswordEncoder encoder;
@@ -37,9 +41,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto getUserByEmail(String email) {
+    public UserDto findUserByEmail(String email) {
         return userRepository.findByEmail(email).map(mapper::toUserDto)
-                .orElseThrow(() -> new UsernameNotFoundException("Unknown user login :" + email));
+                .orElseThrow(() -> new UsernameNotFoundException("Unknown user email :" + email));
+    }
+
+    @Override
+    public UserDto findUserById(String userId) {
+        UserDto userDto = userRepository.findByUserId(userId).map(mapper::toUserDto)
+                .orElseThrow(() -> new UsernameNotFoundException("Unknown user id :" + userId));
+        List<AlbumDto> albums = albumService.getAlbumsByUserId(userId);
+        userDto.setAlbumList(albums);
+        return userDto;
     }
 
     @Override

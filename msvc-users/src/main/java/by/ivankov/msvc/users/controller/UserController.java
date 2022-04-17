@@ -30,12 +30,18 @@ public class UserController {
 
     @GetMapping("/status")
     public String getStatus() {
-        return "Current token expiration time is: " + env.getProperty("token.expiration_time");
+        return "Current token expiration time is: " + env.getProperty("specific.property");
     }
 
     @GetMapping
     public List<UserDto> getAllUsers() {
         return Collections.emptyList();
+    }
+
+
+    @GetMapping("/{userId}")
+    public UserDto getUserById(@PathVariable String userId) {
+        return userService.findUserById(userId);
     }
 
     @PostMapping

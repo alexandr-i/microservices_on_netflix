@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author al.ivankov@outlook.com
@@ -24,5 +25,6 @@ public class UserDto implements Serializable {
     private String lastName;
     private String email;
     private String password;
+    private List<AlbumDto> albumList;
 
 }

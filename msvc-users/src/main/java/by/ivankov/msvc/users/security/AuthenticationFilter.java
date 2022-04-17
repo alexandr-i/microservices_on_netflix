@@ -47,7 +47,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     protected void successfulAuthentication(HttpServletRequest req, HttpServletResponse resp,
                                             FilterChain chain, Authentication auth) {
         String email = ((User) auth.getPrincipal()).getUsername();
-        UserDto dto = userService.getUserByEmail(email);
+        UserDto dto = userService.findUserByEmail(email);
 
         String token = Jwts.builder()
                 .setSubject(dto.getUserId())
