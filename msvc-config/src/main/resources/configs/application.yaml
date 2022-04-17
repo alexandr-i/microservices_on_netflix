@@ -13,4 +13,4 @@ spring:
 
 token:
   expiration_time: 864000000
-  secret: dfdfdfdfd654d6f54s6d51f6s5d4f6s5d1f
+  secret: '{cipher}AQB7Oju4FPxnew2W1IZOLYB3m2nur7aDB0f8ZE/tLmjDs7dZ+h1ythYfO/CJb/u3ExL7Jza6bIYZEDoWsbjCpA8TFAu+sJ8W2JipooiQtLQTlk6tTgV+kusOu9RqslcG+rNsrCGOLzSV9qQ2BK6mnmk+GaktopFd4huTz/FOijwA1Qhf34lfQCR4J11KoekSghLFq4oTjHcpqQS4j2jqNS6p5rSxYZtpLPJPv3qRMNbRQnAzEwzQKZ5eWpAc/6pqotwd5vcNbfOs2iQJw8i/4J9qOb6ReLJYuVi4IQrULHrmAPsPs3FapOw7Q6CV4SL/8/qwoFaRoPRKLp5pPWXzkQnU0H3ZxLE1FPYg8Y0O93x0xr+zxPYs8uvjrIzjjVBX5JI='

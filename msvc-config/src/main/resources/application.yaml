@@ -17,7 +17,18 @@ server.port: 8099
 spring.application.name: msvc-config
 
 management.endpoints.web.exposure.include: busrefresh
-#
+
+
+### For symmetric encryption
+#encrypt.key: kjboihb34ouiytbkuhiuvyb347iutb3u4g
+
+encrypt:
+  key-store:
+    location: classpath:/keystore/apiEncryptionKey.jks
+    password: '1q2w3e4r'
+    alias: apiEncryptionKey
+
+### For having properties from git repo
 #spring:
 #  cloud:
 #    config:

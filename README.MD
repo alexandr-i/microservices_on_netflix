@@ -13,3 +13,7 @@ http://localhost:15672   guest/guest
 - User-msvc: http://localhost:8010/msvc-users/users
 - User-DB: http://localhost:8010/msvc-users/h2-console org.h2.Driver - DB name in spring logs
 
+KeyTool:
+keytool -genkeypair -alias apiEncryptionKey -keyalg RSA -dname "CN=Alexandr Ivankov,OU=Spring-MSVC,O=MyCompany,L=MyCity,S=MyState,C=MyCountry" -keypass 1q2w3e4r -keystore apiEncryptionKey.jks -storepass 1q2w3e4r
+keytool -importkeystore -srckeystore apiEncryptionKey.jks -deststoretype pkcs12
+
