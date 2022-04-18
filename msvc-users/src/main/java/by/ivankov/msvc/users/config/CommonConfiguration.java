@@ -24,4 +24,9 @@ public class CommonConfiguration {
         return Logger.Level.FULL;
     }
 
+    @Bean
+    public FeignErrorDecoder errorDecoder() {
+        return new FeignErrorDecoder();
+    }
+
 }

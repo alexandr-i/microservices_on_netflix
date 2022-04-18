@@ -4,3 +4,28 @@ spring:
   config:
     import: optional:configserver:http://localhost:8099
 logging.level.by.ivankov.msvc.users.client.AlbumClient: DEBUG
+
+
+
+feign:
+  circuitbreaker:
+    enabled: true
+
+resilience4j.retry:
+  retry-aspect-order: 2
+  instances.msvc-albums:
+    max-attempts: 3
+    wait-duration: 2s
+    enable-exponential-backoff: true
+    exponential-backoff-multiplier: 5
+resilience4j.circuitbreaker:
+  circuit-breaker-aspect-order: 1
+  instances.msvc-albums:
+    failure-rate-threshold: 50
+    automatic-transition-from-open-to-half-open-enabled: true
+    wait-duration-in-open-state: 10s
+    sliding-window-type: COUNT_BASED
+    sliding-window-size: 2
+    minimum-number-of-calls: 1
+    event-consumer-buffer-size: 10
+

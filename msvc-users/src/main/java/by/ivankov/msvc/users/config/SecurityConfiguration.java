@@ -1,12 +1,13 @@
 package by.ivankov.msvc.users.config;
 
-import by.ivankov.msvc.users.service.UserService;
 import by.ivankov.msvc.users.security.AuthenticationFilter;
+import by.ivankov.msvc.users.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -32,7 +33,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
-        http.authorizeRequests().antMatchers("/**").hasIpAddress(gatewayHost)
+        http.authorizeRequests()
+                .antMatchers("/**").hasIpAddress(gatewayHost)
+                .antMatchers(HttpMethod.GET, "/actuator/health").hasIpAddress(gatewayHost)
+                .antMatchers(HttpMethod.GET, "/actuator/circuitbreakerevents").hasIpAddress(gatewayHost)
                 .and().addFilter(getAuthenticationFilter());
         http.headers().frameOptions().disable();//H2 Console
     }

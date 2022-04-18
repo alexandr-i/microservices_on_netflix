@@ -1,10 +1,12 @@
+### Actuator Health
+GET http://localhost:8010/msvc-users/actuator/health
+
+### Actuator Circuit breaker events
+GET http://localhost:8010/msvc-users/actuator/circuitbreakerevents
+
 ### API Default
 GET http://localhost:8010/msvc-users/users
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3ZWIxMGJhNi01OWVlLTQ4MjQtYTE5OC1iNjE0NWVhY2I3ZWIiLCJleHAiOjE2NTAwNjE4ODB9.La0INoCth5hLad1pbHYtm8I52zvdm7vSxScy_SXDINunz1NZ6roG3mjgOQQlH2E3Azdoek1ttbM6EnCEkDaIHQ
-
-### Mapping
-GET http://localhost:8010/users
-
 
 ### Create
 POST http://localhost:8010/msvc-users/users
@@ -27,5 +29,5 @@ Content-Type: application/json
 }
 
 ### GetById
-GET http://localhost:8010/msvc-users/users/9bdeed23-8ca6-4141-ae5e-6d4e58f40a58
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5YmRlZWQyMy04Y2E2LTQxNDEtYWU1ZS02ZDRlNThmNDBhNTgiLCJleHAiOjE2NTEwNzY1MzR9.qub2dd0RxxZTgYij3kG69TYrDHfIllYkp0pq16J3wNbcLGq0SaE255IsUW1o_tKtKO3srG3Qc97OfuxfnFTYjQ
+GET http://localhost:8010/msvc-users/users/708e3b74-97b2-4cb4-9e83-60916721287f
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MDhlM2I3NC05N2IyLTRjYjQtOWU4My02MDkxNjcyMTI4N2YiLCJleHAiOjE2NTExNjkxNjZ9.SRy_Z1xO94IIKhSOOsijwCikCppweXkCoN5a5LuZMMzDS7_S0OR3T_iU_4As8YOqrXm6cXA9nZIQG8Wf7_OnBQ

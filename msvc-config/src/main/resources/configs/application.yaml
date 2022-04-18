@@ -17,3 +17,5 @@ token:
 
 msvc:
   albums.url: 'http://MSVC-ALBUMS/users/%s/albums'
+
+management.endpoints.web.exposure.include: "*"

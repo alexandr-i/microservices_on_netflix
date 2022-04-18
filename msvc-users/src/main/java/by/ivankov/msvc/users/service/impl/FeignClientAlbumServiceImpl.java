@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Service
 @Primary
-public class FeignClientServiceImpl implements AlbumService {
+public class FeignClientAlbumServiceImpl implements AlbumService {
 
     private final AlbumClient albumClient;
 
