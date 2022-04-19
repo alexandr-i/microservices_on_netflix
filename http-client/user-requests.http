@@ -29,5 +29,5 @@ Content-Type: application/json
 }
 
 ### GetById
-GET http://localhost:8010/msvc-users/users/708e3b74-97b2-4cb4-9e83-60916721287f
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MDhlM2I3NC05N2IyLTRjYjQtOWU4My02MDkxNjcyMTI4N2YiLCJleHAiOjE2NTExNjkxNjZ9.SRy_Z1xO94IIKhSOOsijwCikCppweXkCoN5a5LuZMMzDS7_S0OR3T_iU_4As8YOqrXm6cXA9nZIQG8Wf7_OnBQ
+GET http://localhost:8010/msvc-users/users/c6517cbc-bfa3-4d96-b562-3daa93d78df8
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjNjUxN2NiYy1iZmEzLTRkOTYtYjU2Mi0zZGFhOTNkNzhkZjgiLCJleHAiOjE2NTEyNTc4NTR9.O4QeXJgkcj0STl7ndauveolh8zVtXMiml4JoRrgX4btG0FbmCG0r-7ELHTmUrVqkV9nNCwivMlm2L1BF_0igRw

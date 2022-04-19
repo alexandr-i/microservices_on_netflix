@@ -6,7 +6,6 @@ spring:
 logging.level.by.ivankov.msvc.users.client.AlbumClient: DEBUG
 
 
-
 feign:
   circuitbreaker:
     enabled: true

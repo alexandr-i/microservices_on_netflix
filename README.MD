@@ -8,6 +8,8 @@ http://localhost:8099/msvc-users/default
 
 ## Rabbit for config spreading
 http://localhost:15672   guest/guest 
+## Zipkin for trace web
+http://localhost:9411   guest/guest 
 
 ### User-msvc
 - User-msvc: http://localhost:8010/msvc-users/users
@@ -19,4 +21,7 @@ keytool -importkeystore -srckeystore apiEncryptionKey.jks -deststoretype pkcs12
 
 Guide:
 1. run docker-compose
-2. run all msvc
+1. start config
+1. start discovery
+1. start gateway
+1. start all the rest

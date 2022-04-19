@@ -5,11 +5,25 @@ eureka:
 
 spring:
   devtools.restart.enabled: true
+  sleuth.sampler.probability: '1.0'
+  zipkin:
+    base-url: 'http://localhost:9411'
+    sender.type: web
   rabbitmq:
     host: localhost
     port: 5672
     username: guest
     password: guest
+  datasource:
+    url: 'jdbc:mysql://localhost:3306/MSVCS'
+    username: root
+    password:
+    initialization-mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
 
 token:
   expiration_time: 864000000
@@ -19,3 +33,7 @@ msvc:
   albums.url: 'http://MSVC-ALBUMS/users/%s/albums'
 
 management.endpoints.web.exposure.include: "*"
+
+logging:
+  file:
+    name: ${spring.application.name}.log

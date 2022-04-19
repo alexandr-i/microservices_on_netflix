@@ -8,6 +8,7 @@ import by.ivankov.msvc.users.repository.UserRepository;
 import by.ivankov.msvc.users.service.AlbumService;
 import by.ivankov.msvc.users.service.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -21,6 +22,7 @@ import java.util.UUID;
 /**
  * @author al.ivankov@outlook.com
  */
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -50,6 +52,7 @@ public class UserServiceImpl implements UserService {
     public UserDto findUserById(String userId) {
         UserDto userDto = userRepository.findByUserId(userId).map(mapper::toUserDto)
                 .orElseThrow(() -> new UsernameNotFoundException("Unknown user id :" + userId));
+        log.info("findUserById -> Before albumService.getAlbumsByUserId");
         List<AlbumDto> albums = albumService.getAlbumsByUserId(userId);
         userDto.setAlbumList(albums);
         return userDto;
