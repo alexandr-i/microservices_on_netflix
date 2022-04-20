@@ -4,6 +4,9 @@ GET http://localhost:8099/msvc-users/default
 ### Check Configs msvc-albums
 GET http://localhost:8099/msvc-albums/default
 
+### Check Configs discovery-service
+GET http://localhost:8099/discovery-service/default
+
 ### Trigger bus update
 POST http://localhost:8099/actuator/busrefresh
 

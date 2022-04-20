@@ -1,5 +1,5 @@
 ## Discovery Eureka: 8100
-http://localhost:8100
+http://localhost:8100 test/test
 
 ## Api Gateway on port 8010
 
@@ -20,6 +20,15 @@ keytool -genkeypair -alias apiEncryptionKey -keyalg RSA -dname "CN=Alexandr Ivan
 keytool -importkeystore -srckeystore apiEncryptionKey.jks -deststoretype pkcs12
 
 Guide:
+Pre-req:
+1. Install java
+1. Install docker
+1. Configure it a bit: (cmd on Windows)
+  ```
+    wsl -d docker-desktop
+    sysctl -w vm.max_map_count=262144
+  ```
+Main-Steps:
 1. run docker-compose
 1. start config
 1. start discovery
